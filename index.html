@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Profile card component</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      @font-face {
+        font-family: "KumbSans";
+        src: url("./font/Kumbh_Sans/KumbhSans-VariableFont_YOPQ\,wght.ttf")
+          format(truetype);
+        font-display: swap;
+      }
+      :root {
+        --Dark-cyan: hsl(185, 75%, 39%);
+        --Very-dark-desaturated-blue: hsl(229, 23%, 23%);
+        --Dark-grayish-blue: hsl(227, 10%, 46%);
+
+        --Dark-gray: hsl(0, 0%, 59%);
+      }
+      body {
+        inline-size: 1.5;
+        -webkit-font-smoothing: antialiased;
+        min-height: 100vh;
+        height: 925px;
+        font-size: 18px;
+        font-family: KumbSans;
+        font-weight: 400;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: hsl(185, 75%, 39%);
+        overflow: hidden;
+      }
+
+      .bg-top {
+        position: absolute;
+        margin-top: -60%;
+        margin-left: -60%;
+        z-index: -1;
+      }
+      .bg-bottom {
+        position: absolute;
+        margin-right: -69%;
+        margin-bottom: -69%;
+        z-index: -1;
+      }
+
+      .card {
+        width: 350px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        border-radius: 10px;
+        background-color: hsl(0, 0%, 100%);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+
+        .background-picture img {
+          border-radius: 10px 10px 0 0;
+        }
+
+        .user {
+          position: relative;
+          margin-top: -17%;
+          border-radius: 50%;
+          border: 5px solid white;
+          background-color: white;
+          overflow: hidden;
+        }
+        .user img {
+          display: flex;
+          width: 100%; height: 100%;
+          border-radius: 50%;
+          object-fit: cover;
+        }
+
+        .card-info {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+
+          .user-name-age {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 20px 0 10px 0;
+
+            .user-name {
+              font-weight: 700;
+              margin-right: 10px;
+            }
+
+            .user-age {
+              color: hsl(227, 10%, 46%);
+            }
+          }
+
+          .user-local {
+            color: hsl(0, 0%, 59%);
+            font-size: 14px;
+          }
+        }
+
+        .line {
+          margin-top: 20px;
+          width: 350px;
+          border: 1px solid hsl(0, 0%, 91%);
+        }
+
+        .grade {
+          width: 300px;
+          display: flex;
+          align-items: center;
+          text-align: center;
+          justify-content: space-between;
+          margin: 20px 0;
+
+          .num {
+            font-weight: 700;
+            color: hsl(229, 23%, 23%);
+            letter-spacing: 1px;
+            line-height: 30px;
+          }
+
+          .text {
+            color: hsl(0, 0%, 59%);
+            letter-spacing: 2px;
+            font-size: 10px;
+          }
+        }
+      }
+
+      .attribution {
+        position: absolute;
+        font-size: 11px;
+        text-align: center;
+        bottom: 0;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+  </head>
+  <body>
+    <img src="./images/bg-pattern-top.svg" class="bg-top" alt="picture">
+
+    <article class="card">
+      <section class="background-picture">
+        <picture>
+          <source
+            media="(max-width:650px)"
+            srcset="./images/bg-pattern-card.svg"
+          />
+          <img src="./images/bg-pattern-card.svg" alt="picture" />
+        </picture>
+      </section>
+
+      <figure class="user">
+        <img src="./images/image-victor.jpg" alt="user" />
+      </figure>
+
+      <section class="card-info">
+        <section class="user-name-age">
+          <p class="user-name">Victor Crest</p>
+          <p class="user-age">26</p>
+        </section>
+
+        <p class="user-local">London</p>
+      </section>
+
+      <hr class="line">
+
+      <section class="grade">
+        <section class="follow">
+          <p class="num">80K</p>
+          <p class="text">Followers</p>
+        </section>
+
+        <section class="like">
+          <p class="num">803K</p>
+          <p class="text">Likes</p>
+        </section>
+
+        <section class="photo">
+          <p class="num">1.4K</p>
+          <p class="text">Photos</p>
+        </section>
+      </section>
+    </article>
+
+    <img src="./images/bg-pattern-bottom.svg" class="bg-bottom" alt="picture">
+
+    <footer class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="#">WEI HU</a>.
+    </footer>
+  </body>
+</html>
